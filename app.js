@@ -26,7 +26,9 @@ app.get("/test", async (req, res) => {
     res.json({ status: "✅ Connected to OpenAI", data });
   } catch (error) {
     console.error("Error connecting to OpenAI:", error);
-    res.status(500).json({ status: "❌ Connection failed", error: error.message });
+    res
+      .status(500)
+      .json({ status: "❌ Connection failed", error: error.message });
   }
 });
 
